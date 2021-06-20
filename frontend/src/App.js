@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import Grid from '@material-ui/core/Grid'
 
@@ -10,20 +11,22 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Grid container>
-        <Grid item xs={12}>
-          <NavBar />
-        </Grid>
-        <Grid item xs={3}>
-          <SideBar />
-        </Grid>
-        <Grid item xs={9}>
-          <ChatArea />
-        </Grid>
-      </Grid>
-    </div>
+    <AppContainer>
+      <NavBar />
+      <MainContainer>
+        <SideBar />
+        <ChatArea />
+      </MainContainer>
+   </AppContainer>
   );
 }
+
+const AppContainer = styled.div`
+
+`;
+
+const MainContainer = styled.div`
+  display: flex;
+`;
 
 export default App;

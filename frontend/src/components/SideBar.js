@@ -1,23 +1,23 @@
 import React from 'react'
-import Grid from '@material-ui/core/Grid'
+import styled from 'styled-components'
 
 import SideBarMenu from './SideBarMenu'
+import SideBarConversations from './SideBarConversations'
 
 import './SideBar.css'
 
 const SideBar = () => {
     return (
-        <div className="SideBar">
-            <Grid container>
-                <Grid item xs={2}>
-                    <SideBarMenu />
-                </Grid>
-                <Grid item xs={10}>
-                    dfkd
-                </Grid>
-            </Grid>
-        </div>
+        <Container>
+            <SideBarMenu />
+            <SideBarConversations />
+        </Container>
     )
 }
+
+const Container = styled.div`
+  display: flex;
+  width: 600px;
+`;
 
 export default SideBar
