@@ -4,15 +4,18 @@ import styled from 'styled-components'
 const LeftPanel = () => {
     return (
         <Container>
-            <Header>
+            <NavBar>
                 <h2>Nav</h2>
+            </NavBar>
+            <Header>
+
             </Header>
             <ActionsContainer>
                 <ActionsMenu>
-                    menu
+                    <h2>Menu</h2>
                 </ActionsMenu>
                 <ActionsArea>
-                    area
+                    <h2>Area</h2>
                 </ActionsArea>
             </ActionsContainer>
         </Container>
@@ -24,21 +27,17 @@ export default LeftPanel
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     width: 400px;
 `;
 
-const Header = styled.div`
+const NavBar = styled.div`
     display: flex;
-    position: sticky;
-    top: 0;
-    z-index: 1;
+    height: 50px;
+    padding: 15px;
     background-color: lightblue;
     justify-content: space-between;
-    border-bottom: 1px solid whitesmoke;
     align-items: center;
-    padding: 10px;
-    height: 40px;
 `;
 
 const ActionsContainer = styled.div`
@@ -46,8 +45,14 @@ const ActionsContainer = styled.div`
     height: 100%;
 `;
 
+const Header = styled.header`
+    height: 60px;
+    padding: 30px;
+    background-color: lightcoral;
+`;
+
 const ActionsMenu = styled.div`
-    width: 60px;
+    width: 80px;
     background-color: green;
 `;
 
