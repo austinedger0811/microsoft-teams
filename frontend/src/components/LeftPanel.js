@@ -1,62 +1,82 @@
 import React from 'react'
 import styled from 'styled-components'
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore'
+import NavigateNextIcon from '@material-ui/icons/NavigateNext'
+import NotificationsIcon from '@material-ui/icons/Notifications'
 
 const LeftPanel = () => {
-    return (
-        <Container>
-            <NavBar>
-                <h2>Nav</h2>
-            </NavBar>
-            <Header>
+	return (
+		<Container>
+			<NavBar>
+				<BackButton />
+				<NextButton />
+			</NavBar>
+			<ActionsContainer>
+				<ActionsMenu>
+					
 
-            </Header>
-            <ActionsContainer>
-                <ActionsMenu>
-                    <h2>Menu</h2>
-                </ActionsMenu>
-                <ActionsArea>
-                    <h2>Area</h2>
-                </ActionsArea>
-            </ActionsContainer>
-        </Container>
-    )
+				</ActionsMenu>
+				<ActionsArea>
+					<Header>
+
+					</Header>
+				</ActionsArea>
+			</ActionsContainer>
+		</Container>
+	)
 }
 
 export default LeftPanel
 
 const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 400px;
+	display: flex;
+	flex-direction: column;
+	width: 400px;
 `;
 
 const NavBar = styled.div`
-    display: flex;
-    height: 50px;
-    padding: 15px;
-    background-color: lightblue;
-    justify-content: space-between;
-    align-items: center;
+	display: flex;
+	flex-shrink: 0;
+	height: 50px;
+	padding: 8px;
+	background-color: #464775;
+	align-items: center;
 `;
 
 const ActionsContainer = styled.div`
-    display: flex;
-    height: 100%;
+	display: flex;
+	height: 100%;
 `;
 
 const Header = styled.header`
-    height: 60px;
-    padding: 30px;
-    background-color: lightcoral;
+	flex-shrink: 0;
+	height: 60px;
+	background-color: #F0F0F0;
+	border-bottom: solid 1px #E0E0E0;
 `;
 
 const ActionsMenu = styled.div`
-    width: 80px;
-    background-color: green;
+	width: 80px;
+	background-color: #EBEBEB;
 `;
 
 const ActionsArea = styled.div`
-    width: 100%;
-    background-color: red;
+	width: 100%;
+	background-color: #F0F0F0;
+`;
+
+const BackButton = styled(NavigateBeforeIcon)`
+	&& {
+		color: white;
+		cursor: pointer;
+		opacity: 0.8;
+	}
+`;
+
+const NextButton = styled(NavigateNextIcon)`
+	&& {
+		color: white;
+		cursor: pointer;
+		opacity: 0.8;
+	}
 `;
