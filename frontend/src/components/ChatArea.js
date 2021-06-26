@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography'
 import SearchIcon from '@material-ui/icons/Search'
 import Avatar from '@material-ui/core/Avatar'
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz'
+import AddIcon from '@material-ui/icons/Add'
 
 const ChatArea = () => {
 	return (
@@ -12,15 +13,26 @@ const ChatArea = () => {
 				<SearchBar type="search" placeholder="Search" />
 				<NavButtonContainer>
 					<SettingsButton />
-					<AvatarIcon />
+					<AvatarNavIcon />
 				</NavButtonContainer>
 			</NavBar>
 			<Header>
-				<AvatarIcon />
-				<Typography variant="h6">Edger, Austin</Typography>
+				<UserDescriptionContainer>
+					<AvatarUserIcon />
+					<Typography variant="h6">Edger, Austin</Typography>
+				</UserDescriptionContainer>
+				<ChatOptionsContainer>
+					<Typography variant="subtitle-1">Chat</Typography>
+					<Typography variant="subtitle-1">Files</Typography>
+					<Typography variant="subtitle-1">Organization</Typography>
+					<Typography variant="subtitle-1">Activity</Typography>
+					<AddButton />
+				</ChatOptionsContainer>
 			</Header>
 			<ChatContainer>
-				
+				<form>
+					<ChatTextInput />
+				</form>
 			</ChatContainer>
 		</Container>
 	)
@@ -60,7 +72,7 @@ const SettingsButton = styled(MoreHorizIcon)`
 	}
 `;
 
-const AvatarIcon = styled(Avatar)`
+const AvatarNavIcon = styled(Avatar)`
 && {
 		cursor: pointer;
 		height: 32px;
@@ -78,9 +90,45 @@ const Header = styled.div`
 	border-bottom: solid 1px #E0E0E0;
 `;
 
+const UserDescriptionContainer = styled.div`
+	display: flex;
+	align-items: center;
+`;
+
+const AvatarUserIcon = styled(Avatar)`
+&& {
+		cursor: pointer;
+		height: 32px;
+		width: 32px;
+		margin-right: 12px;
+	}
+`;
+
+const AddButton = styled(AddIcon)`
+&& {
+		cursor: pointer;
+
+	}
+`;
+
+const ChatOptionsContainer = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+	width: 300px;
+`;
+
 const ChatContainer = styled.div`
 	background-color: #F5F5F5;
 	height: 100%;
+`;
+
+const ChatTextInput = styled.input`
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 40px;
+
 `;
 
 const SearchBar = styled.input`
